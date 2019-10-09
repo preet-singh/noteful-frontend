@@ -10,10 +10,10 @@ export default class AddNote extends React.Component{
     handleSubmit = e =>{
         e.preventDefault();
         const note = {
-            name: e.target['noteName'].value,
-            content: e.target['ContentName'].value,
-            folderId: e.target['note-folder-select'].value,
-            modified: new Date()
+            note_name: e.target['noteName'].value,
+            note_content: e.target['ContentName'].value,
+            folder_id: e.target['note-folder-select'].value,
+            date_modified: new Date()
     }
         console.log(note)
         fetch (`${config.API_ENDPOINT}/notes`,{
@@ -46,7 +46,7 @@ export default class AddNote extends React.Component{
                     <label htmlFor="noteFolder">Folder</label>
                     <select id="note-folder-select">
                         {folders.map(folder =>
-                            <option key={folder.id} value={folder.id}>{folder.name}
+                            <option key={folder.id} value={folder.id}>{folder.folder_name}
                             </option>)}
                     </select>
                     <button className="button" type="submit">Add Note</button>

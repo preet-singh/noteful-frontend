@@ -9,7 +9,7 @@ class AddFolder extends Component{
 
     handleSubmit = e => {
         const folder = {
-            name: e.target['folderName'].value
+            folder_name: e.target['folderName'].value
         }
         console.log(folder)
         fetch (`${config.API_ENDPOINT}/folders`,{

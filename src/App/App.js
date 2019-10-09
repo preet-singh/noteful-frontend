@@ -91,9 +91,10 @@ class App extends Component {
     }
     HandleAddNote=(note)=>{
         this.setState({
-            notes: [...this.state.notes, note],
+            notes: [...this.state.notes, note
+            ]
             
-        })
+        }, this.componentDidMount())
 
     }
 
