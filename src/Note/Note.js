@@ -21,7 +21,7 @@ export default class Note extends React.Component {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json'
-      },//here
+      }//here
     })
       .then(res => {
         if (!res.ok)
@@ -71,7 +71,8 @@ export default class Note extends React.Component {
 }
 
 Note.propTypes = {
-  name: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  modified: PropTypes.string.isRequired
+  onDeleteNote: PropTypes.func.isRequired
+  // name: PropTypes.string.isRequired,
+  // id: PropTypes.string.isRequired,
+  // modified: PropTypes.string.isRequired
 }

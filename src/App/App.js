@@ -82,14 +82,15 @@ class App extends Component {
             </React.Fragment>
         );
     }
-    HandleAddFolder=(folder)=>{
+
+    handleAddFolder = (folder) => {
         this.setState({
             folders: [...this.state.folders, folder],
             
-        })
+        }, this.componentDidMount())
 
     }
-    HandleAddNote=(note)=>{
+    handleAddNote = (note) => {
         this.setState({
             notes: [...this.state.notes, note
             ]
@@ -98,7 +99,7 @@ class App extends Component {
 
     }
 
-    HandleSetError=(error)=>{
+    handleSetError = (error) => {
         this.setState({
             error: error
         })
@@ -109,9 +110,9 @@ class App extends Component {
             notes: this.state.notes,
             folders: this.state.folders,
             deleteNote: this.handleDeleteNote,
-            AddFolder: this.HandleAddFolder,
-            AddNote: this.HandleAddNote,
-            setError: this.HandleSetError,
+            AddFolder: this.handleAddFolder,
+            AddNote: this.handleAddNote,
+            setError: this.handleSetError,
             error: this.state.error
         };
         return (
